@@ -17,7 +17,7 @@ require(['dojo/_base/kernel', 'dojo/ready'], function  (dojo, ready) {
 				img.onload = function() {
 					if (unread > 0 || fresh > 0) {
 
-						let bg_color = "#257aa7";
+						let bg_color = "#2a89bc";
 						let count = unread;
 						let font_size = "42px";
 
