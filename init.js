@@ -1,4 +1,4 @@
-/* global require, App, Feeds */
+/* global require, App, Feeds, PluginHost */
 
 require(['dojo/_base/kernel', 'dojo/ready'], function  (dojo, ready) {
 	ready(function() {
@@ -46,21 +46,12 @@ require(['dojo/_base/kernel', 'dojo/ready'], function  (dojo, ready) {
 						link.href = canvas.toDataURL("image/x-icon");
 					};
 				}
-
-
 			});
 		}
 
-		App.updateTitle = function() {
-			let tmp = "Tiny Tiny RSS";
-
-			if (App.global_unread > 0) {
-				tmp = "(" + App.global_unread + ") " + tmp;
-			}
-
+		PluginHost.register(PluginHost.HOOK_COUNTERS_PROCESSED, () => {
 			updateFaviconBadge(App.global_unread, Feeds.getUnread(-3, 0));
+		});
 
-			document.title = tmp;
-		}
 	});
 });
