@@ -1,6 +1,5 @@
 <?php
 class Favicon_Unread extends Plugin {
-	private $host;
 
 	function about() {
 		return array(1.0,
@@ -9,7 +8,6 @@ class Favicon_Unread extends Plugin {
 	}
 
 	function init($host) {
-		$this->host = $host;
 	}
 
 	function get_js() {
