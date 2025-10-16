@@ -9,7 +9,7 @@ require(['dojo/_base/kernel', 'dojo/ready'], function  (dojo, ready) {
 			canvas.height = 72;
 			if (canvas.getContext) {
 
-				const link = App.find("link[rel='shortcut icon']");
+				const link = document.querySelector("link[rel='shortcut icon']");
 
 				const ctx = canvas.getContext('2d');
 				const img = new Image();
